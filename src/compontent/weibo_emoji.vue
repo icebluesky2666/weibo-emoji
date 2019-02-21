@@ -160,7 +160,11 @@ export default {
         }
     },
     mounted() {
-        console.log('chuan--------',this.weiboIcon)
+        console.log('初始化',this.weiboIcon)
+        console.log('传入组件的表情数据：',this.weiboIcon)
+            this.categorys = getCategory(this.weiboIcon);
+            this.emotions = getEmotions(this.weiboIcon);
+            this.activeCate = this.categorys[0];
     },
 }
 </script>
