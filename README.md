@@ -1,18 +1,21 @@
-# weibo-emoji
+# Weibo-emoji
 
-> A Weibo emoji plugn
+> 一个微博表情emoji插件
 
-## Build Setup
+## Install
 
-``` bash
-# install dependencies
-npm install
+` npm install weibo-emoji `
+` import WeiboEmoji from 'weibo-emoji' `
+` import WeiboEmoji from 'weibo-emoji' `
 
-# serve with hot reload at localhost:8080
-npm run dev
+## Api
+` <weibo-emoji :weiboIcon="weiboIcon" @changeEmoji="selsctEmoji = arguments[0].phrase" ref="emoji"> </weibo-emoji> `
+* weiboIcon 为图表数据，数据格式见源码/src/data.js 如无与线上一直图标，可以使用静态数据文件
+* changeEmoji为图标点击回调
 
-# build for production with minification
-npm run build
-```
+## Feedback
+在使用中有任何问题，欢迎反馈给我
+* Email: 1359658384@qq.com
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+
