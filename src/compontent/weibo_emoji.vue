@@ -1,6 +1,6 @@
 <template>
     <div class="emoji_box">
-        <ul style="font-size: 12px;display:inline-block">
+        <ul style="font-size: 12px;display:inline-block;float: left;">
             <li v-for="(cate,index) in categorys" :key="cate.category" v-show="isShowCate(index)" :class="{em_cate:true,activity:cate.category == activeCate.category,leftBorder:index == nowIndex}" @click="changeTab(cate)">
                 <span class="cat_name">{{cate.category}}</span>
                 <div class="cat_gr"></div>
@@ -17,7 +17,7 @@
     </div>
 </template>
 <style lang="less" scoped>
-    ul{
+    ul,li{
         margin: 0;
         padding: 0;
         list-style: none;
