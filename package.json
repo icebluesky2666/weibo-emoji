@@ -1,7 +1,7 @@
 {
     "name": "weibo-emoji",
     "main": "dist/vue-weibo-emoji.js",
-    "repository": { //仓库地址
+    "repository": {
         "type": "git",
         "url": "https://github.com/icebluesky2666/weibo-emoji"
     },
