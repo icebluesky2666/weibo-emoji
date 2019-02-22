@@ -12,7 +12,7 @@
 
 ` import WeiboEmoji from 'weibo-emoji' `
 
-` import WeiboEmoji from 'weibo-emoji' `
+` Vue.use(WeiboEmoji) `
 
 ## Api
 
