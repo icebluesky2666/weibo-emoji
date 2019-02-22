@@ -7,7 +7,7 @@
             </li>
         </ul>
          <ul style="font-size: 12px;display:inline-block;float:right">
-            <li :class="{em_cate:true, lrbtn:true,displayLeft: isFirst}"  @click="move(0)"><i class="el-icon-caret-left"></i></li><li :class="{em_cate:true, lrbtn:true,displayRight:isLeast}"  @click="move(1)"><i class="el-icon-caret-right"></i></li>
+            <li :class="{em_cate:true, lrbtn:true,displayLeft: isFirst}"  @click="move(0)"><i class="iconfont icon-weibo-emojiln_sanjiaozuo"></i></li><li :class="{em_cate:true, lrbtn:true,displayRight:isLeast}"  @click="move(1)"><i class="iconfont icon-weibo-emojiln_sanjiaoyou"></i></li>
         </ul>
         <ul style="margin-top: 6px;display: inline-block;">
             <li v-for="emotion in emotionActiveGroup" :key="emotion.id" class="ej"  @click.prevent.stop="$emit('changeEmoji', emotion)">
@@ -17,6 +17,11 @@
     </div>
 </template>
 <style lang="less" scoped>
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
     .emoji_box{
         width: 373px;
         .em_cate{
@@ -54,6 +59,7 @@
                 line-height: 28px;
                 i{
                     margin: 0 8px;
+                    font-size: 12px;
                 }
                 &:first-child{
                     border-left: 1px solid #d9d9d9;
@@ -90,15 +96,14 @@
 </style>
 <script>
 import { getCategory,getEmotions } from './handle';
+import 'normalize.css'
+import '../assets/icon/iconfont.css'
 export default {
     name: 'weibo-emoji',
     props: ['weiboIcon'],
     watch: {
         weiboIcon: function(){
-            console.log('传入组件的表情数据：',this.weiboIcon)
-            this.categorys = getCategory(this.weiboIcon);
-            this.emotions = getEmotions(this.weiboIcon);
-            this.activeCate = this.categorys[0];
+            this.initData();
         },
         nowIndex: function(){
             if(this.nowIndex>= this.categorys.length-4) {
@@ -157,14 +162,15 @@ export default {
                 };
                 this.nowIndex = this.nowIndex -1;
             }
-        }
-    },
-    mounted() {
-        console.log('初始化',this.weiboIcon)
-        console.log('传入组件的表情数据：',this.weiboIcon)
+        },
+        initData:function(){
             this.categorys = getCategory(this.weiboIcon);
             this.emotions = getEmotions(this.weiboIcon);
             this.activeCate = this.categorys[0];
+        }
+    },
+    mounted() {
+        this.initData();
     },
 }
 </script>

@@ -2,11 +2,14 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-    entry: './src/main.js',
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, './dist'),
         publicPath: '/dist/',
-        filename: 'build.js'
+        filename: 'vue-weibo-emoji.js', //打包生成文件的名字
+        library: 'WeiboEmoji', //reqire引入的名字
+        libraryTarget: 'umd',
+        umdNamedDefine: true
     },
     module: {
         rules: [{
@@ -38,7 +41,11 @@ module.exports = {
             {
                 test: /\.less$/,
                 use: ['vue-style-loader', 'css-loader', 'less-loader']
-            }
+            },
+            {
+                test: /\.(ttf|eot|svg|woff|woff2)$/,
+                use: 'url-loader'
+            },
         ]
     },
     resolve: {

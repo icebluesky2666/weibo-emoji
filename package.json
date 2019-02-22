@@ -1,5 +1,10 @@
 {
     "name": "weibo-emoji",
+    "main": "dist/vue-weibo-emoji.js",
+    "repository": { //仓库地址
+        "type": "git",
+        "url": "https://github.com/icebluesky2666/weibo-emoji"
+    },
     "description": "A Weibo emoji plugn",
     "version": "1.0.0",
     "author": "jhqin",
@@ -10,6 +15,7 @@
         "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
     },
     "dependencies": {
+        "normalize.css": "^8.0.1",
         "vue": "^2.5.11"
     },
     "browserslist": [
@@ -27,6 +33,7 @@
         "file-loader": "^1.1.4",
         "less": "^3.9.0",
         "less-loader": "^4.1.0",
+        "url-loader": "^1.1.2",
         "vue-loader": "^13.0.5",
         "vue-template-compiler": "^2.4.4",
         "webpack": "^3.6.0",
