@@ -9,7 +9,9 @@
 ## Install
 
 ` npm install weibo-emoji `
+
 ` import WeiboEmoji from 'weibo-emoji' `
+
 ` import WeiboEmoji from 'weibo-emoji' `
 
 ## Api
