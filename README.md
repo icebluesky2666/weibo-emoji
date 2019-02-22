@@ -1,6 +1,6 @@
 # Weibo-emoji
 
-> 一个微博表情emoji插件
+> 微博表情emoji插件
 
 ## effect：
 
